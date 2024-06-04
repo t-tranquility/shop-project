@@ -1,12 +1,19 @@
 import { FC, useState } from "react";
+import useCartStore from "../shared/config/useCartStore";
 
 interface NeonBorderProps {
   borderColor: string;
+  item: {
+    imageUrl: string;
+    title: string;
+    price: number;
+  };
 }
 
 
-const NeonButtonPlus: FC<NeonBorderProps> = ({ borderColor }) => {
+const NeonButtonPlus: FC<NeonBorderProps> = ({ borderColor, item }) => {
   const [isClicked, setIsClicked] = useState(false);
+  const { addItem } = useCartStore();
 
   const neonBorderStyles = {
     borderColor: borderColor,
@@ -15,6 +22,12 @@ const NeonButtonPlus: FC<NeonBorderProps> = ({ borderColor }) => {
 
   const handleClick = () => {
     setIsClicked(!isClicked);
+    addItem({
+      imageUrl: item.imageUrl,
+      title: item.title,
+      price: item.price,
+      borderColor: borderColor,
+    });
   };
 
   const buttonStyles = {

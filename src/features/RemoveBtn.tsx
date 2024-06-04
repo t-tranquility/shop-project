@@ -1,10 +1,18 @@
 import { FC, useState } from "react";
 
-interface NeonBorderProps {
+interface CartItem {
+  imageUrl: string;
+  title: string;
+  price: number;
   borderColor: string;
 }
+interface NeonBorderProps {
+  borderColor: string;
+  item: CartItem;
+  onRemove: (item: CartItem) => void;
+}
 
-const RemoveBtn: FC<NeonBorderProps> = ({ borderColor }) => {
+const RemoveBtn: FC<NeonBorderProps> = ({ borderColor, item, onRemove }) => {
   const [isClicked, setIsClicked] = useState(false);
 
   const neonBorderStyles = {
@@ -14,6 +22,7 @@ const RemoveBtn: FC<NeonBorderProps> = ({ borderColor }) => {
 
   const handleClick = () => {
     setIsClicked(!isClicked);
+    onRemove(item);
   };
 
   const buttonStyles = {

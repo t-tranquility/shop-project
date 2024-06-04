@@ -11,6 +11,14 @@ type Props = {
 };
 
 export const Card: FC<Props> = ({ imageUrl, title, price, borderColor }) => {
+
+    const item = {
+        imageUrl,
+        title,
+        price,
+      };
+      
+
     return (
         <NeonBorder borderColor={borderColor}>
             <div className="w-[260px] flex flex-col rounded-lg p-8 !bg-transparent backdrop-blur">
@@ -23,7 +31,7 @@ export const Card: FC<Props> = ({ imageUrl, title, price, borderColor }) => {
                             <span className=" text-gray-500 uppercase">Цена: </span>
                             <b>{price} руб.</b>
                         </div>
-                        <NeonButtonPlus borderColor={borderColor}  />
+                        <NeonButtonPlus borderColor={borderColor} item={item} />
                     </div>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 export const Header: FC = () => {
 
     const [isCartOpen, setIsCartOpen] = useState(false);
+    
 
     const toggleCart = () => {
       setIsCartOpen(!isCartOpen);
