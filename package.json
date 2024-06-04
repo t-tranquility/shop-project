@@ -10,15 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.13",
     "eslint-config-prettier": "^9.1.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
+    "@svgr/rollup": "^8.1.0",
     "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.8.0",
     "@vitejs/plugin-react": "^4.2.1",
@@ -31,9 +34,11 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "postcss": "^8.4.38",
     "prettier": "^3.2.5",
+    "rollup-plugin-typescript2": "^0.36.0",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.4.5",
     "vite": "^5.2.0",
-    "vite-plugin-eslint": "^1.8.1"
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-svgr": "^4.2.0"
   }
 }
