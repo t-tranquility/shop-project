@@ -1,11 +1,15 @@
-import { FC, useState } from "react";
+import { FC, useState } from 'react';
+import { FavoriteItem } from '../shared/types';
+import useFavoritesStore from '../shared/config/useFavoritesStore';
 
-interface NeonBorderProps {
+interface LikeBtnProps {
   borderColor: string;
+  item: FavoriteItem;
 }
 
-const LikeBtn: FC<NeonBorderProps> = ({ borderColor }) => {
+const LikeBtn: FC<LikeBtnProps> = ({ borderColor, item }) => {
   const [isLiked, setIsLiked] = useState(false);
+  const { addItem, removeItem, items } = useFavoritesStore();
 
   const neonBorderStyles = {
     borderColor: borderColor,
@@ -14,7 +18,14 @@ const LikeBtn: FC<NeonBorderProps> = ({ borderColor }) => {
 
   const handleClick = () => {
     setIsLiked(!isLiked);
+    if (isLiked) {
+      removeItem(item);
+    } else {
+      addItem(item);
+    }
   };
+
+  const isItemInFavorites = items.some((favoriteItem) => favoriteItem.title === item.title);
 
   return (
     <button
@@ -24,12 +35,12 @@ const LikeBtn: FC<NeonBorderProps> = ({ borderColor }) => {
     >
       <div
         className="absolute inset-0 rounded-lg"
-        style={{ ...neonBorderStyles, filter: "blur(10px)" }}
+        style={{ ...neonBorderStyles, filter: 'blur(10px)' }}
       ></div>
       <svg
         className=""
         viewBox="0 0 24 24"
-        fill={isLiked ? borderColor : "transparent"}
+        fill={isItemInFavorites ? borderColor : 'transparent'}
         stroke={borderColor}
         strokeWidth="2"
       >
