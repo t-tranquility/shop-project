@@ -3,6 +3,7 @@ import { MainPage } from "../pages/MainPage/MainPage"
 import { Header } from "../widgets/Header"
 import { Cart } from "../pages/Cart/Cart"
 import { FavoritesPage } from "../pages/Favorites/Favorite"
+import { Particles } from "./Particles"
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
           <Route path="/cart" element={< Cart />} />
           <Route path="/favorites" element={< FavoritesPage />} />
         </Routes>
+        <Particles />
     </>
   )
 }

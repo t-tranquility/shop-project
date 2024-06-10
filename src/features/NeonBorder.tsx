@@ -13,7 +13,7 @@ const NeonBorder: FC<NeonBorderProps> = ({ children, borderColor }) => {
 
   return (
     <div className="relative inline-block rounded-lg" style={neonBorderStyles}>
-      <div className="absolute inset-0 rounded-lg" style={{ ...neonBorderStyles, filter: 'blur(10px)' }}></div>
+      <div className="absolute inset-0 rounded-lg" style={{ ...neonBorderStyles, filter: 'blur(20px)' }}></div>
       {children}
     </div>
   );

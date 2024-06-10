@@ -8,7 +8,6 @@ interface LikeBtnProps {
 }
 
 const LikeBtn: FC<LikeBtnProps> = ({ borderColor, item }) => {
-  const [isLiked, setIsLiked] = useState(false);
   const { addItem, removeItem, items } = useFavoritesStore();
 
   const neonBorderStyles = {
@@ -17,8 +16,7 @@ const LikeBtn: FC<LikeBtnProps> = ({ borderColor, item }) => {
   };
 
   const handleClick = () => {
-    setIsLiked(!isLiked);
-    if (isLiked) {
+    if (items.some((favoriteItem) => favoriteItem.title === item.title)) {
       removeItem(item);
     } else {
       addItem(item);
