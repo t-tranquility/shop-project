@@ -1,6 +1,7 @@
 import { FC } from "react";
 import useCartStore from "../../shared/config/useCartStore";
 import { CartCard } from "../../widgets/CartCard";
+import { Link } from "react-router-dom";
 
 
 export const Cart: FC = () => {
@@ -12,7 +13,10 @@ export const Cart: FC = () => {
           
           {items.length > 0 ? (
             <>
-            <p className="text-3xl uppercase mb-16">Cart</p>
+            <div className="flex justify-between items-center mb-16">
+              <p className="text-3xl uppercase">Cart</p>
+              <Link to="/make-order" className="bg-opacity-50 backdrop-filter backdrop-blur-sm border py-2 px-4 border-gray-500 rounded-xl hover:border-gray-100">Make an order</Link>
+            </div>
             <div className="flex flex-wrap gap-20">
             {items.map((item) => (
               <CartCard

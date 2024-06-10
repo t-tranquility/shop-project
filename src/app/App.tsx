@@ -6,6 +6,7 @@ import { FavoritesPage } from '../pages/Favorites/Favorite';
 import { Particles } from './Particles';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
+import { Order } from '../pages/Order/Order';
 
 function App() {
   const location = useLocation();
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/make-order" element={<Order />} />
       </Routes>
       <Particles />
     </>
