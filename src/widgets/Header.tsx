@@ -7,7 +7,7 @@ export const Header: FC = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center max-w-[1290px] w-full mx-auto mt-6 px-12 py-4 !bg-transparent backdrop-blur border-b-white border-b-2">
+      <div className="flex justify-between items-center max-w-[1290px] w-full mx-auto mt-6 px-12 py-4 !bg-transparent  border-b-white border-b-2">
         <Link to="/">
           <p className="uppercase text-5xl font-extrabold">sneakers</p>
           <p className="text-sm font-extralight">магазин лучших кроссовок</p>
