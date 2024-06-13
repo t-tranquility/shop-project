@@ -23,10 +23,10 @@ export const Header: FC = () => {
             <p>cart</p>
             {cartSum > 0 && <span className="text-white border-white border-2 text-xs px-2 py-1 rounded-full ml-2">{cartSum} руб.</span>}
           </Link>
-          <div className="flex gap-2 items-center">
+          <Link to="/profile" className="flex gap-2 items-center">
             <img className="w-6 h-6" src="profile.svg" alt="" />
             <p>profile</p>
-          </div>
+          </Link>
         </div>
       </div>
     </>

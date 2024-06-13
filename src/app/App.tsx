@@ -7,6 +7,7 @@ import { Particles } from './Particles';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
 import { Order } from '../pages/Order/Order';
+import { Profile } from '../pages/Profile/Profile';
 
 function App() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/make-order" element={<Order />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <Particles />
     </>
