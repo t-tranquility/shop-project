@@ -28,7 +28,7 @@ export const CartCard: FC<Props> = ({ imageUrl, title, price, borderColor, item,
                     <div className="flex justify-between items-center w-full">
                         <div className="flex flex-col">
                             <span className=" text-gray-500 uppercase">Цена: </span>
-                            <b>{price} руб.</b>
+                            <b>${price}</b>
                         </div>
                         <RemoveBtn borderColor={borderColor} item={item} onRemove={onRemove} />
                     </div>

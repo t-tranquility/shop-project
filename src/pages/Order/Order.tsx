@@ -74,27 +74,27 @@ export const Order: FC = () => {
   return (
     <div className="max-w-[1290px] w-full mx-auto my-[50px]">
       <div className="border rounded-md !bg-transparent backdrop-blur border-gray-300 w-full max-w-[700px] text-gray-300 p-8 mx-auto">
-        <p className="text-center text-3xl mb-4 uppercase font-thin">Order</p>
+        <p className="text-center text-3xl mb-4 uppercase font-thin">Заказ</p>
         <div className="mb-6">
-          <p className="text-lg mb-4">Your order:</p>
+          <p className="text-lg mb-4">Ваш заказ:</p>
           {items.map((item) => (
             <OrderCart key={item.title} imageUrl={item.imageUrl} title={item.title} price={item.price} />
           ))}
-          <p className="text-md mt-4">Total price: {cartSum}</p>
+          <p className="text-md mt-4">Итоговая стоимость: {cartSum}</p>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col justify-center gap-8 items-center">
-            <p>Delivery information:</p>
+            <p>Информация для доставки:</p>
             <input
               type="text"
-              placeholder="Address"
+              placeholder="Адрес"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className="p-2 border border-white bg-transparent rounded-md max-w-[500px] w-full"
             />
             <input
               type="text"
-              placeholder="Phone Number"
+              placeholder="Номер телефона"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
               className="p-2 border border-white bg-transparent rounded-md max-w-[500px] w-full"
@@ -103,9 +103,9 @@ export const Order: FC = () => {
               id="size-select"
               value={size}
               onChange={(e) => setSize(e.target.value)}
-              className="p-2 border border-white !bg-[#1b1b1b] bg-transparent rounded-md max-w-[500px] w-full appearance-none"
+              className="p-2 border text-gray-300 border-white !bg-[#1b1b1b] bg-transparent rounded-md max-w-[500px] w-full appearance-none"
             >
-              <option value="" disabled>Choose a size:</option>
+              <option  value="" disabled>Размер</option>
               {sizes.map((s) => (
                 <option key={s} value={s}>{s}</option>
               ))}
@@ -115,9 +115,9 @@ export const Order: FC = () => {
               onChange={(e) => setPaymentMethod(e.target.value)}
               className="p-2 border border-white !bg-[#1b1b1b] rounded-md max-w-[500px] w-full appearance-none"
             >
-              <option value="" disabled>Select a payment method</option>
-              <option value="cash">Cash</option>
-              <option value="card">Card</option>
+              <option value="" disabled>Способ оплаты</option>
+              <option value="cash">Наличные</option>
+              <option value="card">Карта</option>
             </select>
             <input
               type="date"
@@ -129,7 +129,7 @@ export const Order: FC = () => {
             type="submit"
             className="p-2 max-w-[200px] border-2 border-white w-full text-white rounded-md hover:border-gray-300"
           >
-            Submit Order
+            Оформить заказ
           </button>
           </div>
         </form>

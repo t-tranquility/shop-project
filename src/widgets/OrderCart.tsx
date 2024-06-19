@@ -13,7 +13,7 @@ export const OrderCart: FC<Props> = ({ imageUrl, title, price}) => {
           <h5 className="max-w-[200px] w-full">{title}</h5>
           <div className="flex justify-between  items-center w-full">
             <div className="flex flex-col fixed right-16">
-              <b>{price} руб.</b>
+              <b>${price}</b>
             </div>
           </div>
         </div>

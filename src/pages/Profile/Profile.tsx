@@ -59,9 +59,9 @@ export const Profile: FC = () => {
 
   return (
     <div className="max-w-[1290px] w-full mx-auto my-[50px]">
-      <div className="border rounded-md !bg-transparent backdrop-blur border-gray-300 w-full max-w-[700px] text-gray-300 p-8 mx-auto">
-        <p className="text-center text-4xl mb-4 uppercase font-thin">Profile</p>
-        <p className="text-2xl mb-4">User information:</p>
+      <div className="border rounded-md !bg-transparent backdrop-blur border-gray-300 w-full max-w-[800px] text-gray-300 p-8 mx-auto">
+        <p className="text-center text-4xl mb-4 uppercase font-thin">профиль</p>
+        <p className="text-2xl mb-4">Информация пользователя:</p>
         {isEditing ? (
           <div className="flex flex-col gap-4 mb-6">
             <input
@@ -69,43 +69,43 @@ export const Profile: FC = () => {
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               className="p-2 border border-white bg-transparent rounded-md max-w-[500px] w-full"
-              placeholder="Username"
+              placeholder="Имя"
             />
             <input
               type="password"
               value={oldPassword}
               onChange={(e) => setOldPassword(e.target.value)}
               className="p-2 border border-white bg-transparent rounded-md max-w-[500px] w-full"
-              placeholder="Old Password"
+              placeholder="Старый пароль"
             />
             <input
               type="password"
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
               className="p-2 border border-white bg-transparent rounded-md max-w-[500px] w-full"
-              placeholder="New Password"
+              placeholder="Новый пароль"
             />
-            {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+            {errorMessage && <p className="text-red-700 text-sm">{errorMessage}</p>}
             <button
               onClick={handleSave}
               className="p-2 max-w-[200px] border-2 border-white w-full text-white rounded-md hover:border-gray-300"
             >
-              Save
+              Сохранить
             </button>
           </div>
         ) : (
           <div className="mb-6 gap-2 flex flex-col">
-            <p>Name: {username}</p>
-            <p>Password: ••••••••</p>
+            <p>Имя: {username}</p>
+            <p>Пароль: ••••••••</p>
             <button
               onClick={handleEditToggle}
               className="p-2 max-w-[200px] border-2 border-white w-full text-white rounded-md hover:border-gray-300 mt-4"
             >
-              Edit
+              Изменить
             </button>
           </div>
         )}
-        <p className="text-2xl mb-4">Orders:</p>
+        <p className="text-2xl mb-4">История заказов:</p>
         <div className="flex flex-row gap-4 justify-evenly">
         {orders.length > 0 ? (
           orders.map((order, index) => (
@@ -118,7 +118,7 @@ export const Profile: FC = () => {
             />
           ))
         ) : (
-          <p>No orders found.</p>
+          <p>Заказы не найдены.</p>
         )}
         </div>
       </div>

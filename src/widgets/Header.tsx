@@ -16,16 +16,16 @@ export const Header: FC = () => {
           {/* link to */}
           <Link to="/favorites" className="flex gap-2 items-center text-base">
             <img className="w-8 h-8" src="icons/heart.svg" alt="" />
-            <p>favorite</p>
+            <p>Избранное</p>
           </Link>
           <Link to="/cart" onClick={toggleCart} className="flex gap-2 items-center">
             <img className="w-8 h-8" src="icons/cart.svg" alt="" />
-            <p>cart</p>
-            {cartSum > 0 && <span className="text-white border-white border-2 text-xs px-2 py-1 rounded-full ml-2">{cartSum} руб.</span>}
+            <p>Корзина</p>
+            {cartSum > 0 && <span className="text-white border-white border-2 text-xs px-2 py-1 rounded-full ml-2">${cartSum}</span>}
           </Link>
           <Link to="/profile" className="flex gap-2 items-center">
             <img className="w-6 h-6" src="profile.svg" alt="" />
-            <p>profile</p>
+            <p>Профиль</p>
           </Link>
         </div>
       </div>

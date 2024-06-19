@@ -33,10 +33,10 @@ export const MainPage: FC = () => {
   return (
     <div className="max-w-[1290px] w-full mx-auto my-[50px]">
       <div className="flex flex-row justify-between items-center mb-16">
-        <p className="text-3xl uppercase">All products</p>
+        <p className="text-3xl uppercase">Все товары</p>
         <input
           type="text"
-          placeholder="Search"
+          placeholder="Поиск"
           value={searchInput}
           onChange={handleSearchChange}
           className="p-2 !bg-transparent border border-gray-400 rounded-md appearance-none"
